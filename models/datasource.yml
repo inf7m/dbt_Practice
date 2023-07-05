@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: SpotifyTracks
+    schema: hive_warehouse
+    database: default
+    tables:
+      - name: sp1
