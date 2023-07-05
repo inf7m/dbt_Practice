@@ -1,9 +1,7 @@
-{{
-    config(materialize="view")
-}}
-
 WITH TRANS_POPULARITY AS (
-    SELECT artist_name, popularity, genre, AVG(loudness)
+    SELECT artist_name, popularity, genre, AVG(loudness) AS avg_loudness
     FROM default.sp1
-    GROUP BY artist_name, artist_name
+    GROUP BY artist_name, popularity, genre
 )
+
+SELECT * FROM TRANS_POPULARITY LIMIT 5;
